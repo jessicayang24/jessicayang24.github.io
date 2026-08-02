@@ -1,0 +1,471 @@
+{
+  "国务院级": {
+    "name": "国务院/中央政府",
+    "sites": [
+      {
+        "name": "中国政府网·国务院政策文件库",
+        "url": "https://www.gov.cn/zhengce/zhengcewenjianku/",
+        "desc": "国务院及国务院办公厅发布的政策文件、行政法规、部门规章等"
+      },
+      {
+        "name": "中国政府网·国家行政法规库",
+        "url": "https://www.gov.cn/zhengce/xzfgk/index.htm",
+        "desc": "国务院制定的行政法规全文库"
+      },
+      {
+        "name": "中国政府网·法律法规",
+        "url": "https://www.gov.cn/zhengce/zc_flfg.htm",
+        "desc": "全国人大法律、国务院行政法规、部门规章汇总"
+      },
+      {
+        "name": "中国政府网·中央有关文件",
+        "url": "http://www.gov.cn/zhengce/wenjian/zhongyang.htm",
+        "desc": "中共中央、国务院联合发布的文件"
+      },
+      {
+        "name": "中国政府网·政策解读",
+        "url": "https://www.gov.cn/zhengce/zhengceku/jiedu/",
+        "desc": "国务院政策解读专栏"
+      },
+      {
+        "name": "中国政府网·国家规章库",
+        "url": "https://www.gov.cn/zhengce/zhengceku/guizhang/",
+        "desc": "部门规章和地方政府规章"
+      },
+      {
+        "name": "司法部·国家法律法规数据库",
+        "url": "https://flk.npc.gov.cn/",
+        "desc": "全国人大法律法规数据库（含宪法、法律、行政法规、地方性法规）"
+      },
+      {
+        "name": "人民数据库·国家政策",
+        "url": "https://data.people.com.cn/pd/gjzcxx/list.html",
+        "desc": "人民日报社主办的政策数据库"
+      }
+    ]
+  },
+  "部委级": {
+    "name": "国务院各部委/直属机构",
+    "sites": [
+      {
+        "name": "外交部",
+        "url": "https://www.fmprc.gov.cn/",
+        "policy_url": "https://www.fmprc.gov.cn/web/ziliao_674904/",
+        "desc": "外交政策、条约协定"
+      },
+      {
+        "name": "国防部",
+        "url": "https://www.mod.gov.cn/",
+        "policy_url": "https://www.mod.gov.cn/gfbw/zcwj/",
+        "desc": "国防政策、军事法规"
+      },
+      {
+        "name": "国家发展和改革委员会",
+        "url": "https://www.ndrc.gov.cn/",
+        "policy_url": "https://www.ndrc.gov.cn/xxgk/zcfb/ghxwj/",
+        "desc": "宏观经济政策、发展规划、价格政策"
+      },
+      {
+        "name": "教育部",
+        "url": "http://www.moe.gov.cn/",
+        "policy_url": "http://www.moe.gov.cn/was5/web/search?channelid=239993",
+        "desc": "教育政策、规章、规范性文件"
+      },
+      {
+        "name": "科学技术部",
+        "url": "http://www.most.gov.cn/",
+        "policy_url": "http://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/",
+        "desc": "科技政策、科研管理"
+      },
+      {
+        "name": "工业和信息化部",
+        "url": "https://www.miit.gov.cn/",
+        "policy_url": "https://www.miit.gov.cn/jgsj/wj/",
+        "desc": "工业和信息化政策、行业标准"
+      },
+      {
+        "name": "公安部",
+        "url": "https://www.mps.gov.cn/",
+        "policy_url": "https://www.mps.gov.cn/n2253534/n2253535/",
+        "desc": "公安法规、公共安全政策"
+      },
+      {
+        "name": "民政部",
+        "url": "https://www.mca.gov.cn/",
+        "policy_url": "https://www.mca.gov.cn/n152/n165/",
+        "desc": "社会救助、社会福利、基层治理政策"
+      },
+      {
+        "name": "司法部",
+        "url": "https://www.moj.gov.cn/",
+        "policy_url": "https://www.moj.gov.cn/pub/sfbgw/zwgk/zcwj/",
+        "desc": "司法行政、立法、普法政策"
+      },
+      {
+        "name": "财政部",
+        "url": "http://www.mof.gov.cn/",
+        "policy_url": "http://www.mof.gov.cn/zhengwuxinxi/zhengcefabu/",
+        "desc": "财政政策、税收法规、预算管理"
+      },
+      {
+        "name": "人力资源和社会保障部",
+        "url": "http://www.mohrss.gov.cn/",
+        "policy_url": "http://www.mohrss.gov.cn/xxgk2020/zcwjk/",
+        "desc": "劳动就业、社保、人才政策"
+      },
+      {
+        "name": "自然资源部",
+        "url": "https://www.mnr.gov.cn/",
+        "policy_url": "https://www.mnr.gov.cn/gk/zcwj/",
+        "desc": "土地、矿产、海洋、测绘政策"
+      },
+      {
+        "name": "生态环境部",
+        "url": "https://www.mee.gov.cn/",
+        "policy_url": "https://www.mee.gov.cn/zcwj/zcjd/",
+        "desc": "环境保护、污染防治、生态保护政策"
+      },
+      {
+        "name": "住房和城乡建设部",
+        "url": "https://www.mohurd.gov.cn/",
+        "policy_url": "https://www.mohurd.gov.cn/gongkai/zhengce/",
+        "desc": "城乡建设、房地产、工程建设标准"
+      },
+      {
+        "name": "交通运输部",
+        "url": "https://www.mot.gov.cn/",
+        "policy_url": "https://www.mot.gov.cn/zhengcejiedu/",
+        "desc": "公路、水运、铁路、民航政策"
+      },
+      {
+        "name": "水利部",
+        "url": "http://www.mwr.gov.cn/",
+        "policy_url": "http://www.mwr.gov.cn/zw/zgzygwywj/index.html",
+        "desc": "水资源管理、防汛抗旱、水利建设"
+      },
+      {
+        "name": "农业农村部",
+        "url": "http://www.moa.gov.cn/",
+        "policy_url": "http://www.moa.gov.cn/gk/zcfg/",
+        "desc": "农业、农村、农民政策"
+      },
+      {
+        "name": "商务部",
+        "url": "https://www.mofcom.gov.cn/",
+        "policy_url": "https://policy.mofcom.gov.cn/",
+        "desc": "对外贸易、外资、内贸流通政策"
+      },
+      {
+        "name": "文化和旅游部",
+        "url": "https://www.mct.gov.cn/",
+        "policy_url": "https://www.mct.gov.cn/zwgk/zcwj/",
+        "desc": "文化、旅游、文物政策"
+      },
+      {
+        "name": "国家卫生健康委员会",
+        "url": "http://www.nhc.gov.cn/",
+        "policy_url": "http://www.nhc.gov.cn/wjw/zcwj/",
+        "desc": "医疗卫生、公共卫生、人口政策"
+      },
+      {
+        "name": "退役军人事务部",
+        "url": "https://www.mva.gov.cn/",
+        "policy_url": "https://www.mva.gov.cn/sy/zt/zcwj/",
+        "desc": "退役军人安置、优抚优待政策"
+      },
+      {
+        "name": "应急管理部",
+        "url": "https://www.mem.gov.cn/",
+        "policy_url": "https://www.mem.gov.cn/fw/flfgbz/",
+        "desc": "安全生产、防灾减灾、应急救援"
+      },
+      {
+        "name": "中国人民银行",
+        "url": "http://www.pbc.gov.cn/",
+        "policy_url": "http://www.pbc.gov.cn/zhengcehuobisi/11111/index.html",
+        "desc": "货币政策、金融监管、支付结算"
+      },
+      {
+        "name": "审计署",
+        "url": "https://www.audit.gov.cn/",
+        "policy_url": "https://www.audit.gov.cn/n5/n25/c104035/",
+        "desc": "审计法规、审计结果公告"
+      },
+      {
+        "name": "国务院国有资产监督管理委员会",
+        "url": "https://www.sasac.gov.cn/",
+        "policy_url": "https://www.sasac.gov.cn/n4470048/n4470154/",
+        "desc": "国资监管、国企改革政策"
+      },
+      {
+        "name": "海关总署",
+        "url": "http://www.customs.gov.cn/",
+        "policy_url": "http://www.customs.gov.cn/customs/302249/zfxxgk/zfxxgkml34/",
+        "desc": "进出口监管、关税、通关政策"
+      },
+      {
+        "name": "国家税务总局",
+        "url": "https://www.chinatax.gov.cn/",
+        "policy_url": "https://www.chinatax.gov.cn/chinatax/n810341/n810755/",
+        "desc": "税收政策、征管法规、纳税服务"
+      },
+      {
+        "name": "国家市场监督管理总局",
+        "url": "https://www.samr.gov.cn/",
+        "policy_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/zcwj/",
+        "desc": "市场监管、反垄断、食品药品安全"
+      },
+      {
+        "name": "国家广播电视总局",
+        "url": "https://www.nrta.gov.cn/",
+        "policy_url": "https://www.nrta.gov.cn/art/2023/7/4/art_113_64199.html",
+        "desc": "广播电视、网络视听政策"
+      },
+      {
+        "name": "国家体育总局",
+        "url": "https://www.sport.gov.cn/",
+        "policy_url": "https://www.sport.gov.cn/n315/n20001395/",
+        "desc": "体育事业、全民健身政策"
+      },
+      {
+        "name": "国家统计局",
+        "url": "https://www.stats.gov.cn/",
+        "policy_url": "https://www.stats.gov.cn/gk/",
+        "desc": "统计法规、统计标准、数据发布"
+      },
+      {
+        "name": "国家医疗保障局",
+        "url": "https://www.nhsa.gov.cn/",
+        "policy_url": "https://www.nhsa.gov.cn/col/col104/index.html",
+        "desc": "医保政策、药品价格、基金监管"
+      },
+      {
+        "name": "国家知识产权局",
+        "url": "https://www.cnipa.gov.cn/",
+        "policy_url": "https://www.cnipa.gov.cn/col/col74/index.html",
+        "desc": "专利、商标、地理标志政策"
+      },
+      {
+        "name": "国家信访局",
+        "url": "https://www.gjxfj.gov.cn/",
+        "policy_url": "https://www.gjxfj.gov.cn/gjxfj/fgwj/gwywj.htm",
+        "desc": "信访工作政策、法规"
+      },
+      {
+        "name": "国家保密局",
+        "url": "https://www.gjbmj.gov.cn/",
+        "policy_url": "https://www.gjbmj.gov.cn/409049/409088/",
+        "desc": "保密法律法规、政策"
+      },
+      {
+        "name": "国家核安全局",
+        "url": "https://nnsa.mee.gov.cn/",
+        "policy_url": "https://nnsa.mee.gov.cn/zcwj/gwyygwj/",
+        "desc": "核安全法规、核监管政策"
+      }
+    ]
+  },
+  "地方级": {
+    "name": "省级/地市级政府",
+    "sites": [
+      {
+        "name": "北京市人民政府·政策文件",
+        "url": "https://www.beijing.gov.cn/",
+        "policy_url": "https://www.beijing.gov.cn/zhengce/zcwj/",
+        "region": "华北"
+      },
+      {
+        "name": "天津市人民政府·政策文件",
+        "url": "https://www.tj.gov.cn/",
+        "policy_url": "https://www.tj.gov.cn/zwgk/zcwj/",
+        "region": "华北"
+      },
+      {
+        "name": "河北省人民政府·政策文件",
+        "url": "https://www.hebei.gov.cn/",
+        "policy_url": "https://www.hebei.gov.cn/columns/6f9cd1f0-4d9c-4b6e-9f5e-8c7b8f0e9d9c/",
+        "region": "华北"
+      },
+      {
+        "name": "山西省人民政府·政策文件",
+        "url": "https://www.shanxi.gov.cn/",
+        "policy_url": "https://www.shanxi.gov.cn/zwgk/zcwj/",
+        "region": "华北"
+      },
+      {
+        "name": "内蒙古自治区人民政府·政策文件",
+        "url": "https://www.nmg.gov.cn/",
+        "policy_url": "https://www.nmg.gov.cn/zwgk/zcwj/",
+        "region": "华北"
+      },
+      {
+        "name": "辽宁省人民政府·政策文件",
+        "url": "https://www.ln.gov.cn/",
+        "policy_url": "https://www.ln.gov.cn/zwgk/zcwj/",
+        "region": "东北"
+      },
+      {
+        "name": "吉林省人民政府·政策文件",
+        "url": "https://www.jl.gov.cn/",
+        "policy_url": "https://www.jl.gov.cn/zwgk/zcwj/",
+        "region": "东北"
+      },
+      {
+        "name": "黑龙江省人民政府·政策文件",
+        "url": "https://www.hlj.gov.cn/",
+        "policy_url": "https://www.hlj.gov.cn/zwgk/zcwj/",
+        "region": "东北"
+      },
+      {
+        "name": "上海市人民政府·政策文件",
+        "url": "https://www.shanghai.gov.cn/",
+        "policy_url": "https://www.shanghai.gov.cn/nw12344/",
+        "region": "华东"
+      },
+      {
+        "name": "江苏省人民政府·政策文件",
+        "url": "https://www.jiangsu.gov.cn/",
+        "policy_url": "https://www.jiangsu.gov.cn/col/col57037/",
+        "region": "华东"
+      },
+      {
+        "name": "浙江省人民政府·政策文件库",
+        "url": "https://www.zj.gov.cn/",
+        "policy_url": "https://www.zj.gov.cn/col/col1229577560/index.html",
+        "region": "华东"
+      },
+      {
+        "name": "安徽省人民政府·政策文件",
+        "url": "https://www.ah.gov.cn/",
+        "policy_url": "https://www.ah.gov.cn/zwgk/zcwj/",
+        "region": "华东"
+      },
+      {
+        "name": "福建省人民政府·政务公开",
+        "url": "https://www.fujian.gov.cn/",
+        "policy_url": "https://www.fujian.gov.cn/zwgk/",
+        "region": "华东"
+      },
+      {
+        "name": "江西省人民政府·政策文件",
+        "url": "https://www.jiangxi.gov.cn/",
+        "policy_url": "https://www.jiangxi.gov.cn/zwgk/zcwj/",
+        "region": "华东"
+      },
+      {
+        "name": "山东省人民政府·政策文件",
+        "url": "https://www.shandong.gov.cn/",
+        "policy_url": "https://www.shandong.gov.cn/zwgk/zcwj/",
+        "region": "华东"
+      },
+      {
+        "name": "河南省人民政府·政策文件",
+        "url": "https://www.henan.gov.cn/",
+        "policy_url": "https://www.henan.gov.cn/zwgk/zfxxgkzd/swszfwj/",
+        "region": "华中"
+      },
+      {
+        "name": "湖北省人民政府·政策文件",
+        "url": "https://www.hubei.gov.cn/",
+        "policy_url": "https://www.hubei.gov.cn/zwgk/zcwj/",
+        "region": "华中"
+      },
+      {
+        "name": "湖南省人民政府·政策文件",
+        "url": "https://www.hunan.gov.cn/",
+        "policy_url": "https://www.hunan.gov.cn/zwgk/zcwj/",
+        "region": "华中"
+      },
+      {
+        "name": "广东省人民政府·政策文件",
+        "url": "https://www.gd.gov.cn/",
+        "policy_url": "http://www.gd.gov.cn/gdywdt/zwzt/yjhx/zcwj/mindex.html",
+        "region": "华南"
+      },
+      {
+        "name": "广西壮族自治区人民政府·政策文件",
+        "url": "https://www.gxzf.gov.cn/",
+        "policy_url": "https://www.gxzf.gov.cn/zwgk/zcwj/",
+        "region": "华南"
+      },
+      {
+        "name": "海南省人民政府·政策文件",
+        "url": "https://www.hainan.gov.cn/",
+        "policy_url": "https://www.hainan.gov.cn/zwgk/zcwj/",
+        "region": "华南"
+      },
+      {
+        "name": "重庆市人民政府·政策文件库",
+        "url": "https://www.cq.gov.cn/",
+        "policy_url": "https://www.cq.gov.cn/zwgk/zcwj/",
+        "region": "西南"
+      },
+      {
+        "name": "四川省人民政府·政府文件",
+        "url": "https://www.sc.gov.cn/",
+        "policy_url": "https://www.sc.gov.cn/10462/c103041/newzfwj.shtml",
+        "region": "西南"
+      },
+      {
+        "name": "贵州省人民政府·政策文件",
+        "url": "https://www.guizhou.gov.cn/",
+        "policy_url": "https://www.guizhou.gov.cn/zwgk/zcwj/",
+        "region": "西南"
+      },
+      {
+        "name": "云南省人民政府·政策文件",
+        "url": "https://www.yn.gov.cn/",
+        "policy_url": "https://www.yn.gov.cn/zwgk/zcwj/",
+        "region": "西南"
+      },
+      {
+        "name": "西藏自治区人民政府·政策文件",
+        "url": "https://www.xizang.gov.cn/",
+        "policy_url": "https://www.xizang.gov.cn/zwgk/zcwj/",
+        "region": "西南"
+      },
+      {
+        "name": "陕西省人民政府·政策文件",
+        "url": "https://www.shaanxi.gov.cn/",
+        "policy_url": "https://www.shaanxi.gov.cn/zwgk/zcwj/",
+        "region": "西北"
+      },
+      {
+        "name": "甘肃省人民政府·政策文件",
+        "url": "https://www.gansu.gov.cn/",
+        "policy_url": "https://www.gansu.gov.cn/zwgk/zcwj/",
+        "region": "西北"
+      },
+      {
+        "name": "青海省人民政府·政策文件",
+        "url": "https://www.qinghai.gov.cn/",
+        "policy_url": "https://www.qinghai.gov.cn/zwgk/zcwj/",
+        "region": "西北"
+      },
+      {
+        "name": "宁夏回族自治区人民政府·政策文件",
+        "url": "https://www.nx.gov.cn/",
+        "policy_url": "https://www.nx.gov.cn/zwgk/zcwj/",
+        "region": "西北"
+      },
+      {
+        "name": "新疆维吾尔自治区人民政府·政策文件",
+        "url": "https://www.xinjiang.gov.cn/",
+        "policy_url": "https://www.xinjiang.gov.cn/zwgk/zcwj/",
+        "region": "西北"
+      },
+      {
+        "name": "深圳市人民政府·政策法规",
+        "url": "https://www.sz.gov.cn/",
+        "policy_url": "http://www.sz.gov.cn/cn/xxgk/zfxxgj/zcfg/mindex.html",
+        "region": "计划单列市"
+      },
+      {
+        "name": "广州市人民政府·政策文件库",
+        "url": "https://www.gz.gov.cn/",
+        "policy_url": "https://www.gz.gov.cn/gzzcwjk/m_index.html",
+        "region": "省会城市"
+      }
+    ]
+  }
+}

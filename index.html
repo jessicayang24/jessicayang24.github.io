@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>政策导航站</title>
+    <meta
+      name="description"
+      content="按层级整理的中国政策与政府站点导航，支持搜索、筛选与快速跳转。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Policy Atlas</p>
+          <h1>一页看清政策站点入口</h1>
+          <p class="hero-text">
+            汇总国务院级、部委级和地方级政策站点，帮助你更快定位法规、通知、规划与公开文件。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#directory">开始浏览</a>
+            <a class="secondary-link" href="https://github.com/jessicayang24/jessicayang24.github.io" target="_blank" rel="noreferrer">查看仓库</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="stat-card">
+            <span class="stat-label">站点总数</span>
+            <strong id="total-sites">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">分类层级</span>
+            <strong id="total-sections">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">覆盖区域</span>
+            <strong id="total-regions">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="controls" id="directory">
+          <div class="search-wrap">
+            <label for="search-input">搜索站点</label>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="输入站点名、说明、区域或部门关键词"
+            />
+          </div>
+          <div class="filter-wrap" id="section-filters" aria-label="分类筛选"></div>
+        </section>
+
+        <section class="result-bar">
+          <p id="result-summary">正在载入数据…</p>
+        </section>
+
+        <section id="cards-root" class="cards-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <template id="site-card-template">
+      <article class="site-card">
+        <div class="card-top">
+          <span class="section-pill"></span>
+          <span class="meta-pill"></span>
+        </div>
+        <h2></h2>
+        <p class="site-desc"></p>
+        <div class="card-actions">
+          <a class="site-link primary" target="_blank" rel="noreferrer">官网入口</a>
+          <a class="policy-link secondary" target="_blank" rel="noreferrer">政策文件</a>
+        </div>
+      </article>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
