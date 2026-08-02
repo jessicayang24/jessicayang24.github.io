@@ -3,85 +3,563 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>政策导航站</title>
+    <title>经济性网站网址清单</title>
     <meta
       name="description"
-      content="按层级整理的中国政策与政府站点导航，支持搜索、筛选与快速跳转。"
+      content="中央经济与地方经济网站静态导航页，汇总统计、财政、金融、税务与海关等常用入口。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      :root {
+        --primary: #165dff;
+        --primary-deep: #0e42b3;
+        --primary-soft: #e8f1ff;
+        --bg: #f5f8fc;
+        --card: #ffffff;
+        --text: #1f2a37;
+        --muted: #66758a;
+        --line: #dde6f1;
+        --shadow: 0 10px 30px rgba(15, 48, 118, 0.08);
+        --shadow-lg: 0 18px 40px rgba(15, 48, 118, 0.14);
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans SC", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 64px 20px 92px;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(135deg, #0d47c4 0%, #165dff 55%, #3b82f6 100%);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+        background-size: 28px 28px;
+        opacity: 0.35;
+      }
+
+      .hero h1,
+      .hero p,
+      .hero-stats {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 14px auto 0;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        opacity: 0.94;
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .hero-stat {
+        min-width: 148px;
+        padding: 14px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+      }
+
+      .hero-stat strong {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .hero-stat span {
+        font-size: 0.84rem;
+        opacity: 0.88;
+      }
+
+      .search-wrap {
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        margin: -34px auto 28px;
+        padding: 0 20px;
+      }
+
+      .search-box {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding: 8px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .search-box input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        padding: 14px 16px;
+        font: inherit;
+        color: var(--text);
+        background: transparent;
+      }
+
+      .search-box button {
+        border: 0;
+        cursor: pointer;
+        min-width: 108px;
+        padding: 14px 18px;
+        border-radius: var(--radius-sm);
+        font: inherit;
+        font-weight: 700;
+        color: #fff;
+        background: var(--primary);
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+
+      .tab {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--muted);
+        padding: 10px 20px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 180ms ease;
+      }
+
+      .tab.active {
+        border-color: var(--primary);
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(22, 93, 255, 0.22);
+      }
+
+      .container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 28px 20px 64px;
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .panel-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        padding: 24px 24px 18px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(90deg, var(--primary-soft), rgba(232, 241, 255, 0));
+      }
+
+      .panel-header h2 {
+        margin: 0;
+        font-size: 1.28rem;
+      }
+
+      .panel-header p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .panel-count {
+        flex-shrink: 0;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: var(--primary);
+        color: #fff;
+        font-size: 0.84rem;
+        font-weight: 700;
+      }
+
+      .site-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 14px;
+        padding: 22px;
+      }
+
+      .site-card {
+        display: block;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .site-card:hover {
+        transform: translateY(-3px);
+        border-color: #b7cdfd;
+        box-shadow: 0 12px 24px rgba(22, 93, 255, 0.1);
+      }
+
+      .site-card.hidden {
+        display: none;
+      }
+
+      .site-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .site-index {
+        color: var(--primary);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .site-badge {
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .site-badge.central {
+        background: #e8f1ff;
+        color: #1246b5;
+      }
+
+      .site-badge.local {
+        background: #ebfbf3;
+        color: #147a47;
+      }
+
+      .site-name {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .site-url {
+        margin-top: 10px;
+        color: var(--primary);
+        font-size: 0.82rem;
+        word-break: break-all;
+      }
+
+      .result-tip {
+        margin: 18px 0 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .empty {
+        display: none;
+        padding: 48px 20px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .empty.show {
+        display: block;
+      }
+
+      .footer {
+        padding: 24px 20px 40px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 720px) {
+        .hero {
+          padding: 48px 20px 80px;
+        }
+
+        .search-box {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search-box button {
+          width: 100%;
+        }
+
+        .panel-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Policy Atlas</p>
-          <h1>一页看清政策站点入口</h1>
-          <p class="hero-text">
-            汇总国务院级、部委级和地方级政策站点，帮助你更快定位法规、通知、规划与公开文件。
-          </p>
-          <div class="hero-actions">
-            <a class="primary-link" href="#directory">开始浏览</a>
-            <a class="secondary-link" href="https://github.com/jessicayang24/jessicayang24.github.io" target="_blank" rel="noreferrer">查看仓库</a>
-          </div>
+    <header class="hero">
+      <h1>经济性网站网址清单</h1>
+      <p>集中整理中央经济与地方经济常用官网入口，适合快速访问统计、财政、金融、税务与海关数据平台。</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>23</strong>
+          <span>收录站点</span>
         </div>
-        <div class="hero-panel">
-          <div class="stat-card">
-            <span class="stat-label">站点总数</span>
-            <strong id="total-sites">0</strong>
-          </div>
-          <div class="stat-card">
-            <span class="stat-label">分类层级</span>
-            <strong id="total-sections">0</strong>
-          </div>
-          <div class="stat-card">
-            <span class="stat-label">覆盖区域</span>
-            <strong id="total-regions">0</strong>
-          </div>
+        <div class="hero-stat">
+          <strong>2</strong>
+          <span>核心分类</span>
         </div>
-      </header>
+        <div class="hero-stat">
+          <strong>1</strong>
+          <span>静态入口页</span>
+        </div>
+      </div>
+    </header>
 
-      <main>
-        <section class="controls" id="directory">
-          <div class="search-wrap">
-            <label for="search-input">搜索站点</label>
-            <input
-              id="search-input"
-              type="search"
-              placeholder="输入站点名、说明、区域或部门关键词"
-            />
-          </div>
-          <div class="filter-wrap" id="section-filters" aria-label="分类筛选"></div>
-        </section>
-
-        <section class="result-bar">
-          <p id="result-summary">正在载入数据…</p>
-        </section>
-
-        <section id="cards-root" class="cards-grid" aria-live="polite"></section>
-      </main>
+    <div class="search-wrap">
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="搜索网站名称、统计局、财政厅、人民银行、海关等关键词" />
+        <button type="button" id="searchButton">搜索</button>
+      </div>
+      <p class="result-tip" id="resultTip">当前显示全部 23 个网站。</p>
     </div>
 
-    <template id="site-card-template">
-      <article class="site-card">
-        <div class="card-top">
-          <span class="section-pill"></span>
-          <span class="meta-pill"></span>
-        </div>
-        <h2></h2>
-        <p class="site-desc"></p>
-        <div class="card-actions">
-          <a class="site-link primary" target="_blank" rel="noreferrer">官网入口</a>
-          <a class="policy-link secondary" target="_blank" rel="noreferrer">政策文件</a>
-        </div>
-      </article>
-    </template>
+    <div class="tabs">
+      <button class="tab active" data-section="all">全部</button>
+      <button class="tab" data-section="central">中央经济</button>
+      <button class="tab" data-section="local">地方经济</button>
+    </div>
 
-    <script src="./script.js"></script>
+    <main class="container">
+      <section class="section active" data-section-panel="all">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>全部经济网站</h2>
+              <p>合并查看中央与地方站点，便于统一搜索与跳转。</p>
+            </div>
+            <div class="panel-count">23 个网站</div>
+          </div>
+          <div class="site-grid" id="allGrid"></div>
+          <div class="empty" id="allEmpty">没有找到匹配结果，请换个关键词试试。</div>
+        </div>
+      </section>
+
+      <section class="section" data-section-panel="central">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>中央经济（11个）</h2>
+              <p>覆盖国家统计、央行、财政、证监、银保监、外汇、税务与海关入口。</p>
+            </div>
+            <div class="panel-count">11 个网站</div>
+          </div>
+          <div class="site-grid" id="centralGrid"></div>
+          <div class="empty" id="centralEmpty">没有找到匹配结果，请换个关键词试试。</div>
+        </div>
+      </section>
+
+      <section class="section" data-section-panel="local">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>地方经济（12个）</h2>
+              <p>覆盖重点省市统计局与财政系统入口，适合区域经济数据查询。</p>
+            </div>
+            <div class="panel-count">12 个网站</div>
+          </div>
+          <div class="site-grid" id="localGrid"></div>
+          <div class="empty" id="localEmpty">没有找到匹配结果，请换个关键词试试。</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">经济静态导航页 · GitHub Pages 部署版</footer>
+
+    <script>
+      const sites = [
+        { section: "central", index: 1, name: "国家统计局", url: "https://www.stats.gov.cn/" },
+        { section: "central", index: 2, name: "国家统计局·国家数据发布库", url: "https://data.stats.gov.cn/" },
+        { section: "central", index: 3, name: "中国人民银行·官网", url: "https://www.pbc.gov.cn/" },
+        { section: "central", index: 4, name: "中国人民银行·人民币业务", url: "https://www.pbc.gov.cn/rmyh/index.html" },
+        { section: "central", index: 5, name: "财政部·财政数据", url: "http://www.mof.gov.cn/gkml/caizhengshuju/" },
+        { section: "central", index: 6, name: "财政部预算司·财政数据", url: "http://yss.mof.gov.cn/caizhengshuju/" },
+        { section: "central", index: 7, name: "中国证监会", url: "http://www.csrc.gov.cn/" },
+        { section: "central", index: 8, name: "中国银保监会", url: "https://www.cbirc.gov.cn/" },
+        { section: "central", index: 9, name: "国家外汇管理局", url: "http://www.safe.gov.cn/" },
+        { section: "central", index: 10, name: "国家税务总局", url: "https://www.chinatax.gov.cn/" },
+        { section: "central", index: 11, name: "海关总署", url: "https://www.customs.gov.cn/" },
+        { section: "local", index: 1, name: "北京市统计局", url: "https://tjj.beijing.gov.cn/" },
+        { section: "local", index: 2, name: "上海市统计局", url: "https://tjj.sh.gov.cn/" },
+        { section: "local", index: 3, name: "广东省统计局", url: "https://tjj.gd.gov.cn/" },
+        { section: "local", index: 4, name: "浙江省统计局", url: "https://tjj.zj.gov.cn/" },
+        { section: "local", index: 5, name: "江苏省统计局", url: "https://tjj.jiangsu.gov.cn/" },
+        { section: "local", index: 6, name: "四川省统计局", url: "https://tjj.sc.gov.cn/" },
+        { section: "local", index: 7, name: "湖北省统计局", url: "https://tjj.hubei.gov.cn/" },
+        { section: "local", index: 8, name: "北京市财政局", url: "https://czt.beijing.gov.cn/" },
+        { section: "local", index: 9, name: "上海市财政局", url: "https://czt.sh.gov.cn/" },
+        { section: "local", index: 10, name: "江苏省财政厅", url: "https://czt.jiangsu.gov.cn/" },
+        { section: "local", index: 11, name: "浙江省财政厅", url: "https://czt.zj.gov.cn/" },
+        { section: "local", index: 12, name: "广东省财政厅", url: "https://czt.gd.gov.cn/" }
+      ];
+
+      const state = { active: "all", query: "" };
+      const grids = {
+        all: document.getElementById("allGrid"),
+        central: document.getElementById("centralGrid"),
+        local: document.getElementById("localGrid")
+      };
+      const empties = {
+        all: document.getElementById("allEmpty"),
+        central: document.getElementById("centralEmpty"),
+        local: document.getElementById("localEmpty")
+      };
+      const resultTip = document.getElementById("resultTip");
+
+      function siteBadge(section) {
+        return section === "central"
+          ? '<span class="site-badge central">中央</span>'
+          : '<span class="site-badge local">地方</span>';
+      }
+
+      function createCard(site, displayIndex) {
+        const card = document.createElement("a");
+        card.className = "site-card";
+        card.href = site.url;
+        card.target = "_blank";
+        card.rel = "noreferrer";
+        card.dataset.section = site.section;
+        card.dataset.search = `${site.name} ${site.url}`.toLowerCase();
+        card.innerHTML = `
+          <div class="site-meta">
+            <span class="site-index">${displayIndex}</span>
+            ${siteBadge(site.section)}
+          </div>
+          <h3 class="site-name">${site.name}</h3>
+          <div class="site-url">${site.url}</div>
+        `;
+        return card;
+      }
+
+      function buildGrid(section) {
+        const grid = grids[section];
+        grid.innerHTML = "";
+
+        const source = section === "all" ? sites : sites.filter((site) => site.section === section);
+        source.forEach((site, index) => {
+          const prefix = section === "all" ? (site.section === "central" ? "中央" : "地方") : "";
+          const label = prefix ? `${prefix} ${site.index}` : `${index + 1}`;
+          grid.appendChild(createCard(site, label));
+        });
+      }
+
+      function applySearch() {
+        const cards = document.querySelectorAll(".site-card");
+        const query = state.query.trim().toLowerCase();
+        let totalVisible = 0;
+
+        cards.forEach((card) => {
+          const matchesQuery = !query || card.dataset.search.includes(query);
+          const matchesSection = state.active === "all" || card.dataset.section === state.active;
+          const visible = matchesQuery && matchesSection;
+          card.classList.toggle("hidden", !visible);
+          if (visible) totalVisible += 1;
+        });
+
+        ["all", "central", "local"].forEach((section) => {
+          const scopeCards = Array.from(grids[section].querySelectorAll(".site-card"));
+          const visibleCount = scopeCards.filter((card) => !card.classList.contains("hidden")).length;
+          empties[section].classList.toggle("show", visibleCount === 0);
+        });
+
+        resultTip.textContent = query
+          ? `搜索 “${state.query}” 后共显示 ${totalVisible} 个网站。`
+          : `当前显示全部 ${totalVisible} 个网站。`;
+      }
+
+      function switchSection(nextSection) {
+        state.active = nextSection;
+        document.querySelectorAll(".tab").forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.section === nextSection);
+        });
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.toggle("active", section.dataset.sectionPanel === nextSection);
+        });
+        if (nextSection === "all") {
+          document.querySelector('[data-section-panel="all"]').classList.add("active");
+          document.querySelectorAll('[data-section-panel]').forEach((panel) => {
+            if (panel.dataset.sectionPanel !== "all") panel.classList.remove("active");
+          });
+        }
+        applySearch();
+      }
+
+      buildGrid("all");
+      buildGrid("central");
+      buildGrid("local");
+
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", () => switchSection(tab.dataset.section));
+      });
+
+      document.getElementById("searchInput").addEventListener("input", (event) => {
+        state.query = event.target.value;
+        applySearch();
+      });
+
+      document.getElementById("searchButton").addEventListener("click", applySearch);
+
+      applySearch();
+    </script>
   </body>
 </html>
